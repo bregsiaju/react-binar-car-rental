@@ -1,0 +1,25 @@
+.navbar {
+  background-color: #f1f3ff;
+  padding: 1rem;
+}
+
+.navbar .navbar-content {
+  width: 1168px;
+}
+
+.brand {
+  width: 100px;
+  height: 34px;
+  background-color: #0d28a6;
+}
+
+#offcanvasRight {
+  width: 50%;
+}
+
+@media (max-width: 992px) {
+  .navbar-nav .btn {
+    width: max-content;
+    margin-top: 8px;
+  }
+}
