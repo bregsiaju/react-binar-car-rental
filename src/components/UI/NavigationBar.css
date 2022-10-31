@@ -1,9 +1,8 @@
 .navbar {
   background-color: #f1f3ff;
-  padding: 1rem;
 }
 
-.navbar .navbar-content {
+.container-fluid.navbar-content {
   width: 1168px;
 }
 
@@ -13,13 +12,21 @@
   background-color: #0d28a6;
 }
 
-#offcanvasRight {
+#offcanvasNavbar-expand-lg {
   width: 50%;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 992px) {
   .navbar-nav .btn {
     width: max-content;
     margin-top: 8px;
+  }
+  .navbar-nav {
+    align-items: flex-start;
   }
 }
