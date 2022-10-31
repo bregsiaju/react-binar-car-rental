@@ -3,6 +3,7 @@ body {
   font-family: helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 200vh;
 }
 
 code {
@@ -18,30 +19,5 @@ p {
   border-radius: 2px;
   border: none;
   padding: 8px 12px;
-}
-
-.navbar {
-  background-color: #f1f3ff;
-  padding: 1rem;
-}
-
-.navbar .navbar-content {
-  width: 1168px;
-}
-
-.brand {
-  width: 100px;
-  height: 34px;
-  background-color: #0d28a6;
-}
-
-#offcanvasRight {
-  width: 50%;
-}
-
-@media (max-width: 992px) {
-  .navbar-nav .btn {
-    width: max-content;
-    margin-top: 8px;
-  }
+  font-weight: bold;
 }
