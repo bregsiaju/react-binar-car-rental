@@ -8,7 +8,7 @@ const NavigationBar = () => {
   return (
     <Navbar expand="lg" className="fixed-top justify-content-center">
       <Container fluid className="navbar-content">
-        <Navbar.Brand className="brand"></Navbar.Brand>
+        <Navbar.Brand className="logo-brand"></Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" />
         <Navbar.Offcanvas
           id="offcanvasNavbar-expand-lg"
