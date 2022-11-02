@@ -3,7 +3,6 @@ body {
   font-family: helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 200vh;
 }
 
 code {

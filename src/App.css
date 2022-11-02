@@ -278,9 +278,18 @@
   padding: 0 16px;
 }
 
-.accordion-button {
+.accordion .accordion-item {
+  border: none;
+}
+
+button.accordion-button {
   border: 1px solid #d4d4d4;
   border-radius: 4px;
+}
+
+.accordion-body {
+  border: 1px solid #d4d4d4;
+  border-radius: 0 0 4px 4px;
 }
 
 @media (min-width: 992px) {

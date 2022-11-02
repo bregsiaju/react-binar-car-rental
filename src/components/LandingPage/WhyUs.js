@@ -9,7 +9,7 @@ import iconBadge from '../../assets/general/icon_professional.svg';
 
 const WhyUs = () => {
   return (
-    <div id="why-us" className="why-us">
+    <div className="why-us">
       <Container className="container">
         <div className="heading p-0">
           <p className="title-section fw-bold">Why Us?</p>
