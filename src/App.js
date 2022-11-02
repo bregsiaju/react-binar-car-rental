@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 import Navbar from './components/UI/NavigationBar';
 import Hero from './components/UI/Hero';
@@ -6,11 +7,9 @@ import Footer from './components/UI/Footer';
 
 import OurService from './components/LandingPage/OurService';
 import WhyUs from './components/LandingPage/WhyUs';
-// import Testimonial from './components/LandingPage/Testimonial';
+import Testimonial from './components/LandingPage/Testimonial';
 import GettingStarted from './components/LandingPage/GettingStarted';
 import FAQ from './components/LandingPage/FAQ';
-
-import './App.css';
 
 function App() {
   return (
@@ -22,7 +21,8 @@ function App() {
         <OurService />
         <div id="why-us" />
         <WhyUs />
-        {/* <Testimonial /> */}
+        <div id="testi"></div>
+        <Testimonial />
         <GettingStarted />
         <div id="FAQ" />
         <FAQ />
