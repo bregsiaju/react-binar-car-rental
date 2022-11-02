@@ -4,7 +4,9 @@ import WhyUs from './components/LandingPage/WhyUs';
 import Footer from './components/UI/Footer';
 import Hero from './components/UI/Hero';
 import Navbar from './components/UI/NavigationBar';
+// import Testimonial from './components/LandingPage/Testimonial';
 import './App.css';
+import GettingStarted from './components/LandingPage/GettingStarted';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <div className="body-container">
         <OurService />
         <WhyUs />
+        {/* <Testimonial /> */}
+        <GettingStarted />
       </div>
       <Footer />
     </>
