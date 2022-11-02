@@ -2,8 +2,6 @@ import React from 'react';
 import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 import MyButton from './MyButton';
 
-import './NavigationBar.css';
-
 const NavigationBar = () => {
   return (
     <Navbar expand="lg" className="fixed-top justify-content-center">

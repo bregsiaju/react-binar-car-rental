@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { Container, Row, Col } from 'react-bootstrap';
-import './OurService.css';
-
 import imgService from '../../assets/general/img_service.png';
 import checklist from '../../assets/general/checklist.svg';
 

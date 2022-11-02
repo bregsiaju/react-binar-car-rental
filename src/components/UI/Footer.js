@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Container, Row, Col, Nav } from 'react-bootstrap';
-import './Footer.css';
 
 import iconIG from '../../assets/general/icon_instagram.svg';
 import iconTwitter from '../../assets/general/icon_twitter.svg';

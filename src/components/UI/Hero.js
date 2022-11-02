@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
 import MyButton from './MyButton';
-import './Hero.css';
 
 import car from '../../assets/general/img_car.png';
 
