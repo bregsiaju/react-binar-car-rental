@@ -397,14 +397,6 @@ footer .col {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.search-card {
-  background: #ffffff;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 8%;
-  color: #000000;
-  height: 100%;
-}
-
 .search-card img {
   border-radius: 8px;
 }
