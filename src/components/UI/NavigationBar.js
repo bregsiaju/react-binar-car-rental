@@ -21,7 +21,7 @@ const NavigationBar = () => {
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1">
               <div className="navbar-nav ms-0">
-                <Nav.Link className="me-4 text-black" href="#service">Our Service</Nav.Link>
+                <Nav.Link className="me-4 text-black" href="#our-service">Our Service</Nav.Link>
                 <Nav.Link className="me-4 text-black" href="#why-us">Why Us</Nav.Link>
                 <Nav.Link className="me-4 text-black" href="#testi">Testimonial</Nav.Link>
                 <Nav.Link className="me-4 text-black" href="#FAQ">FAQ</Nav.Link>
