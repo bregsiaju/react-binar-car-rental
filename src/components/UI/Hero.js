@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useLocation } from "react-router-dom";
+import { useDispatch } from 'react-redux';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
 import MyButton from './MyButton';
 
+import { buttonActions } from '../../store/button';
+
 import car from '../../assets/general/img_car.png';
 
-const Hero = (props) => {
-  const [displayBtn, setDisplayBtn] = useState(true);
+const Hero = () => {
+  const location = useLocation();
+  const dispatch = useDispatch();
 
-  const btnAppear = () => {
-    setDisplayBtn(true);
-  };
-
-  const btnDisappear = () => {
-    setDisplayBtn(false);
+  const toggleDisplay = () => {
+    dispatch(buttonActions.toggleDisplay());
   };
 
   return (
@@ -25,7 +26,8 @@ const Hero = (props) => {
                 <p className="slogan fw-bold">Sewa & Rental Mobil Terbaik di kawasan Surabaya</p>
                 <p className="fw-light">Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas dengan harga
                   terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
-                <Nav.Link href="/cars" onClick={btnDisappear}><MyButton>Mulai Sewa Mobil</MyButton></Nav.Link>
+                {location.pathname === "/" &&
+                  (<Nav.Link href="/cars" onClick={toggleDisplay}><MyButton>Mulai Sewa Mobil</MyButton></Nav.Link>)}
               </div>
             </Col>
             <Col lg={6}>
@@ -36,7 +38,7 @@ const Hero = (props) => {
           </Row>
         </Container>
       </div>
-    </div>
+    </div >
   );
 };
 

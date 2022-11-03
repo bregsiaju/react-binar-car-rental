@@ -10,18 +10,17 @@ import LandingPage from './components/LandingPage/index';
 import SearchCar from './components/SearchCar/index';
 
 function App() {
+  // const location = useLocation();
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
       <Hero />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/cars" element={< SearchCar />} />
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/cars" element={< SearchCar />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 

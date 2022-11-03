@@ -399,8 +399,14 @@ footer .col {
 
 .search-card img {
   border-radius: 8px;
+  height: 200px;
+  object-fit: contain;
 }
 
 .search-card svg {
   margin-right: 10px;
+}
+
+.searchPage {
+  display: block;
 }

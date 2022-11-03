@@ -1,12 +1,12 @@
 import React from 'react';
-import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 import MyButton from './MyButton';
+import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 
 const NavigationBar = () => {
   return (
     <Navbar expand="lg" className="fixed-top justify-content-center">
       <Container fluid className="navbar-content">
-        <Navbar.Brand className="logo-brand"></Navbar.Brand>
+        <Nav.Link href="/"><div className="logo-brand"></div></Nav.Link>
         <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" />
         <Navbar.Offcanvas
           id="offcanvasNavbar-expand-lg"
@@ -25,7 +25,8 @@ const NavigationBar = () => {
                 <Nav.Link className="me-4 text-black" href="#why-us">Why Us</Nav.Link>
                 <Nav.Link className="me-4 text-black" href="#testi">Testimonial</Nav.Link>
                 <Nav.Link className="me-4 text-black" href="#FAQ">FAQ</Nav.Link>
-                <Nav.Link href=""><MyButton>Register</MyButton></Nav.Link>
+                <Nav.Link href="/"><MyButton>Register</MyButton>
+                </Nav.Link>
               </div>
             </Nav>
           </Offcanvas.Body>
