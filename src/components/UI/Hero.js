@@ -15,7 +15,7 @@ const Hero = () => {
                 <p className="slogan fw-bold">Sewa & Rental Mobil Terbaik di kawasan Surabaya</p>
                 <p className="fw-light">Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas dengan harga
                   terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
-                <Nav.Link href=""><MyButton>Mulai Sewa Mobil</MyButton></Nav.Link>
+                <Nav.Link href="/cars"><MyButton>Mulai Sewa Mobil</MyButton></Nav.Link>
               </div>
             </Col>
             <Col lg={6}>

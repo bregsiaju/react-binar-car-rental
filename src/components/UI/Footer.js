@@ -19,7 +19,7 @@ const Footer = () => {
             <p>081-233-334-808</p>
           </Col>
           <Col className="navigation mb-3">
-            <Nav.Link href="#service">
+            <Nav.Link href="#our-service">
               <p className="fw-semibold">Our Service</p>
             </Nav.Link>
             <Nav.Link href="#why-us">
