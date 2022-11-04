@@ -5,7 +5,7 @@ const CarResult = (props) => {
   if (props.data.length === 0) {
     return (
       <h5 className="mt-5 text-center">
-        Oops.. tidak menemukan hasil yang dicari
+        Oops.. tidak menemukan mobil yang dicari. Silahkan isi formnya 🚗
       </h5>
     );
   } else {
