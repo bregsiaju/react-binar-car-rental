@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import './App.css';
 
@@ -10,13 +10,15 @@ import LandingPage from './components/LandingPage/index';
 import SearchCar from './components/SearchCar/index';
 
 function App() {
+  const tokenz = window.localStorage.getItem("accessToken");
+
   return (
     <BrowserRouter>
       <Navbar />
       <Hero />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/cars" element={< SearchCar />} />
+        <Route path="/cars" element={tokenz ? < SearchCar /> : <Navigate to="/" />} />
       </Routes>
       <Footer />
     </BrowserRouter>
