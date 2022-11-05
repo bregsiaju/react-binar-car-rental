@@ -10,7 +10,6 @@ import LandingPage from './components/LandingPage/index';
 import SearchCar from './components/SearchCar/index';
 
 function App() {
-  // const location = useLocation();
   return (
     <BrowserRouter>
       <Navbar />
