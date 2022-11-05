@@ -12,7 +12,7 @@ const Hero = () => {
 
   const responseGoogle = response => {
     window.localStorage.setItem("accessToken", response.accessToken);
-    console.log(response);
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -26,6 +26,10 @@ const Hero = () => {
     gapi.load("client:auth2", start);
   }, []);
 
+  const notLoginHandler = () => {
+    console.log("Please login first!");
+  };
+
   return (
     <div id="main" className="d-flex justify-content-center">
       <div className="position-relative">
@@ -38,7 +42,7 @@ const Hero = () => {
                   terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
                 {location.pathname === "/" && (
                   <div>
-                    <Link to={tokenz ? "/cars" : "/"}><MyButton>Mulai Sewa Mobil</MyButton></Link>
+                    <Link to={tokenz ? "/cars" : notLoginHandler()}><MyButton>Mulai Sewa Mobil</MyButton></Link>
                     <GoogleLogin
                       clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                       buttonText="Login with Google"

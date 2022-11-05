@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 
 const NavigationBar = () => {
+  const tokenz = window.localStorage.getItem("accessToken");
+
   return (
     <Navbar expand="lg" className="fixed-top justify-content-center">
       <Container fluid className="navbar-content">
@@ -26,8 +28,12 @@ const NavigationBar = () => {
                 <Nav.Link className="me-4 text-black" href="#why-us">Why Us</Nav.Link>
                 <Nav.Link className="me-4 text-black" href="#testi">Testimonial</Nav.Link>
                 <Nav.Link className="me-4 text-black" href="#FAQ">FAQ</Nav.Link>
-                <Nav.Link href="/"><MyButton>Register</MyButton>
-                </Nav.Link>
+                {tokenz ?
+                  <MyButton onClick={() => {
+                    window.localStorage.removeItem("accessToken");
+                    window.location.reload();
+                  }} className="bg-danger">Log Out</MyButton>
+                  : <Link to={"/"}><MyButton>Register</MyButton></Link>}
               </div>
             </Nav>
           </Offcanvas.Body>
