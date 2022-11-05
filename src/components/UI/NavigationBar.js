@@ -1,12 +1,13 @@
 import React from 'react';
 import MyButton from './MyButton';
+import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Offcanvas } from 'react-bootstrap';
 
 const NavigationBar = () => {
   return (
     <Navbar expand="lg" className="fixed-top justify-content-center">
       <Container fluid className="navbar-content">
-        <Nav.Link href="/"><div className="logo-brand"></div></Nav.Link>
+        <Link to={"/"}><div className="logo-brand"></div></Link>
         <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" />
         <Navbar.Offcanvas
           id="offcanvasNavbar-expand-lg"

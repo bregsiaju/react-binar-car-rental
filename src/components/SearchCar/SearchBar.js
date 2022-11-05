@@ -1,31 +1,40 @@
 import React from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import MyButton from '../UI/MyButton';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import CarResult from './CarResult';
+import { getCarsList } from '../../store/actions/carsAction';
 
 const mapStateToProps = (state) => {
   return {
-    cars: state.cars.cars
+    getCarsList: state.carsReducer.getCarsList,
+    errorCarsList: state.carsReducer.errorCarsList,
   };
 };
 
 const SearchBar = (props) => {
-  // const dispatch = useDispatch();
-  // const carsList = useSelector(state => state.getCarsList);
-  // console.log(carsList);
-  const fetchCars = props.cars;
+  const dispatch = useDispatch();
+  const fetchCars = () => {
+    dispatch(getCarsList());
+  };
 
-  // const filterCarsList = () => {
-  //   fetchCars.filter((car) => {
-  //     return 
-  //   })
-  // }
+  const resultCars = props.getCarsList;
+  console.log(resultCars);
+
+  const filteredCars = () => {
+    if (resultCars !== false) {
+      resultCars.filter((car) => {
+        return car.available === true;
+      });
+    }
+    return resultCars;
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // fetchCars();
+    fetchCars();
+    filteredCars();
   };
 
   return (
@@ -65,7 +74,7 @@ const SearchBar = (props) => {
           </Form>
         </Container>
       </section>
-      <CarResult data={fetchCars} />
+      <CarResult data={resultCars} />
     </div>
   );
 };

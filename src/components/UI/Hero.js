@@ -1,20 +1,13 @@
 import React from 'react';
-import { useLocation } from "react-router-dom";
-import { useDispatch } from 'react-redux';
-import { Container, Row, Col, Nav } from 'react-bootstrap';
+import { Link, useLocation } from "react-router-dom";
+import { Container, Row, Col } from 'react-bootstrap';
 import MyButton from './MyButton';
 
-import { buttonActions } from '../../store/button';
 
 import car from '../../assets/general/img_car.png';
 
 const Hero = () => {
   const location = useLocation();
-  const dispatch = useDispatch();
-
-  const toggleDisplay = () => {
-    dispatch(buttonActions.toggleDisplay());
-  };
 
   return (
     <div id="main" className="d-flex justify-content-center">
@@ -27,7 +20,8 @@ const Hero = () => {
                 <p className="fw-light">Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas dengan harga
                   terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
                 {location.pathname === "/" &&
-                  (<Nav.Link href="/cars" onClick={toggleDisplay}><MyButton>Mulai Sewa Mobil</MyButton></Nav.Link>)}
+                  (<Link to={"/cars"}><MyButton>Mulai Sewa Mobil</MyButton></Link>)
+                }
               </div>
             </Col>
             <Col lg={6}>

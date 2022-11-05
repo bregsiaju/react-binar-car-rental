@@ -5,7 +5,6 @@ import { Provider } from 'react-redux';
 import App from './App';
 import reducer from './store/reducers';
 import thunk from 'redux-thunk';
-// import store from './store/index';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';

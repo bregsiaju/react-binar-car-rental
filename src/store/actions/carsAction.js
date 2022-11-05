@@ -10,11 +10,18 @@ export const getCarsList = () => {
           type: GET_CARS_LIST,
           payload: {
             data: response.data,
+            errorMessage: false
           }
         });
       })
       .catch(function (error) {
-        console.log(error);
+        dispatch({
+          type: GET_CARS_LIST,
+          payload: {
+            data: false,
+            errorMessage: error.message
+          }
+        });
       });
   };
 };
