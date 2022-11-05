@@ -1,4 +1,4 @@
-export const carsData = [
+const carsData = [
   {
     "id": "6e2bc663-5197-441a-957b-bc75e4a2da7c",
     "plate": "DBH-3491",
@@ -539,3 +539,5 @@ export const carsData = [
     "specs": ["Electric speed-sensitive variable-assist pwr steering", "Steel side-door impact beams", "Dual bright exhaust tips", "Remote fuel lid release", "Traveler/mini trip computer"]
   }
 ];
+
+export default carsData;

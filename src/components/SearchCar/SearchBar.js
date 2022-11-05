@@ -1,55 +1,31 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-// import { getCarsList } from '../../store/carsReducers';
+// import { useDispatch, useSelector } from 'react-redux';
 import MyButton from '../UI/MyButton';
-
 import { Container, Row, Col, Form } from 'react-bootstrap';
-// import CarResult from './CarResult';
+import { connect } from 'react-redux';
+import CarResult from './CarResult';
 
-// const mapStateToProps = (state) => {
-//   getUsersList: state.getUsersList,
-// };
-
-const SearchBar = () => {
-  const dispatch = useDispatch();
-  const carsList = useSelector(state => state.getCarsList);
-  console.log(carsList);
-  const fetchCars = () => {
-    dispatch(carsList.getCarsList());
+const mapStateToProps = (state) => {
+  return {
+    cars: state.cars.cars
   };
+};
 
-  // const [cars, setCars] = useState([]);
-  // const [passenger, setPassenger] = useState("");
-  // const [availableDate, setavailableDate] = useState("");
+const SearchBar = (props) => {
+  // const dispatch = useDispatch();
+  // const carsList = useSelector(state => state.getCarsList);
+  // console.log(carsList);
+  const fetchCars = props.cars;
 
-  // const fetchCar = () => {
-  //   fetch('https://raw.githubusercontent.com/fnurhidayat/probable-garbanzo/main/data/cars.min.json')
-  //     .then(response => response.json())
-  //     .then(json => {
-  //       setCars(
-  //         json.filter((car) => {
-  //           if (passenger === "") {
-  //             return (
-  //               car.available === true &&
-  //               new Date(Date.parse(car.availableAt.split("T")[0])) < new Date(availableDate)
-  //             );
-  //           } else {
-  //             return (
-  //               car.available === true &&
-  //               new Date(Date.parse(car.availableAt.split("T")[0])) < new Date(availableDate) &&
-  //               car.capacity >= passenger
-  //             );
-  //           }
-  //         })
-  //       );
-  //     });
-  // };
+  // const filterCarsList = () => {
+  //   fetchCars.filter((car) => {
+  //     return 
+  //   })
+  // }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // setPassenger(event.target.inputPassenger.value);
-    // setavailableDate(event.target.inputDate.value);
-    fetchCars();
+    // fetchCars();
   };
 
   return (
@@ -89,9 +65,9 @@ const SearchBar = () => {
           </Form>
         </Container>
       </section>
-      {/* <CarResult data={carsList} /> */}
+      <CarResult data={fetchCars} />
     </div>
   );
 };
 
-export default SearchBar;
+export default connect(mapStateToProps, null)(SearchBar);
