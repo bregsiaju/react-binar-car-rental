@@ -1,42 +1,55 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+// import { getCarsList } from '../../store/carsReducers';
 import MyButton from '../UI/MyButton';
 
 import { Container, Row, Col, Form } from 'react-bootstrap';
-import CarResult from './CarResult';
+// import CarResult from './CarResult';
+
+// const mapStateToProps = (state) => {
+//   getUsersList: state.getUsersList,
+// };
 
 const SearchBar = () => {
-  const [cars, setCars] = useState([]);
-  const [passenger, setPassenger] = useState("");
-  const [availableDate, setavailableDate] = useState("");
-
-  const fetchCar = () => {
-    fetch('https://raw.githubusercontent.com/fnurhidayat/probable-garbanzo/main/data/cars.min.json')
-      .then(response => response.json())
-      .then(json => {
-        setCars(
-          json.filter((car) => {
-            if (passenger === "") {
-              return (
-                car.available === true &&
-                new Date(Date.parse(car.availableAt.split("T")[0])) < new Date(availableDate)
-              );
-            } else {
-              return (
-                car.available === true &&
-                new Date(Date.parse(car.availableAt.split("T")[0])) < new Date(availableDate) &&
-                car.capacity >= passenger
-              );
-            }
-          })
-        );
-      });
+  const dispatch = useDispatch();
+  const carsList = useSelector(state => state.getCarsList);
+  console.log(carsList);
+  const fetchCars = () => {
+    dispatch(carsList.getCarsList());
   };
+
+  // const [cars, setCars] = useState([]);
+  // const [passenger, setPassenger] = useState("");
+  // const [availableDate, setavailableDate] = useState("");
+
+  // const fetchCar = () => {
+  //   fetch('https://raw.githubusercontent.com/fnurhidayat/probable-garbanzo/main/data/cars.min.json')
+  //     .then(response => response.json())
+  //     .then(json => {
+  //       setCars(
+  //         json.filter((car) => {
+  //           if (passenger === "") {
+  //             return (
+  //               car.available === true &&
+  //               new Date(Date.parse(car.availableAt.split("T")[0])) < new Date(availableDate)
+  //             );
+  //           } else {
+  //             return (
+  //               car.available === true &&
+  //               new Date(Date.parse(car.availableAt.split("T")[0])) < new Date(availableDate) &&
+  //               car.capacity >= passenger
+  //             );
+  //           }
+  //         })
+  //       );
+  //     });
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setPassenger(event.target.inputPassenger.value);
-    setavailableDate(event.target.inputDate.value);
-    fetchCar();
+    // setPassenger(event.target.inputPassenger.value);
+    // setavailableDate(event.target.inputDate.value);
+    fetchCars();
   };
 
   return (
@@ -57,7 +70,7 @@ const SearchBar = () => {
                   </Col>
                   <Col className="pe-3 ps-0">
                     <Form.Label htmlFor="inputDate">Tanggal</Form.Label>
-                    <Form.Control type="date" name="inputDate" required />
+                    <Form.Control type="date" name="inputDate" />
                   </Col>
                   <Col className="pe-3 ps-0">
                     <Form.Label htmlFor="inputTime">Waktu Jemput/Ambil</Form.Label>
@@ -76,7 +89,7 @@ const SearchBar = () => {
           </Form>
         </Container>
       </section>
-      <CarResult data={cars} />
+      {/* <CarResult data={carsList} /> */}
     </div>
   );
 };
