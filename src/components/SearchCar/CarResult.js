@@ -1,11 +1,26 @@
 import React from 'react';
+import { Alert, Spinner } from 'react-bootstrap';
 import MyButton from '../UI/MyButton';
 
 const CarResult = (props) => {
-  if (props.data === false || props.data.length === 0) {
+  if (props.loading) {
+    return (
+      <div className="text-center mt-5">
+        <Spinner animation="border" variant="primary" />
+      </div>
+    );
+  } else if (props.error) {
+    return (
+      <div className="container mt-5 col-md-9">
+        <Alert variant="danger">
+          Oops... {props.error}
+        </Alert>
+      </div>
+    );
+  } else if (props.data === false || props.data.length === 0) {
     return (
       <h5 className="mt-5 text-center">
-        Oops.. tidak menemukan mobil yang dicari. Silahkan isi formnya 🚗
+        Sorry, cars isn't found. 🚗
       </h5>
     );
   } else {

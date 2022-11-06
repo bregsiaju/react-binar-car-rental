@@ -1,47 +1,47 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import MyButton from '../UI/MyButton';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import CarResult from './CarResult';
-import { getCarsList } from '../../store/actions/carsAction';
-
-const mapStateToProps = (state) => {
-  return {
-    getCarsList: state.carsReducer.getCarsList,
-    errorCarsList: state.carsReducer.errorCarsList,
-  };
-};
+import { getCarsList } from '../../actions/carsAction';
 
 const SearchBar = (props) => {
+  const { getCarsResult, getCarsError, getCarsLoading } = useSelector((state) => state.CarsReducer);
   const dispatch = useDispatch();
-  const fetchCars = () => {
+
+  useEffect(() => {
     dispatch(getCarsList());
-  };
+  }, [dispatch]);
 
-  const resultCars = props.getCarsList;
-  console.log(resultCars);
+  // const fetchCars = () => {
+  //   dispatch(getCarsList());
+  // };
 
-  const filteredCars = () => {
-    if (resultCars !== false) {
-      resultCars.filter((car) => {
-        return car.available === true;
-      });
-    }
-    return resultCars;
-  };
+  // const resultCars = props.getCarsList;
+  // console.log(resultCars);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetchCars();
-    filteredCars();
-  };
+  // const filteredCars = () => {
+  //   if (resultCars !== false) {
+  //     resultCars.filter((car) => {
+  //       return car.available === true;
+  //     });
+  //   }
+  //   return resultCars;
+  // };
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   fetchCars();
+  //   filteredCars();
+  // };
 
   return (
     <div className="searchPage">
       <section id="search">
         <Container className="border rounded pe-0">
-          <Form onSubmit={handleSubmit}>
+          {/* <Form onSubmit={handleSubmit}> */}
+          <Form>
             <Row className="m-3">
               <Col md={11} className="p-0">
                 <Row className="row-cols-sm-2 row-cols-lg-4 row-cols-1">
@@ -74,9 +74,9 @@ const SearchBar = (props) => {
           </Form>
         </Container>
       </section>
-      <CarResult data={resultCars} />
+      <CarResult data={getCarsResult} loading={getCarsLoading} error={getCarsError} />
     </div>
   );
 };
 
-export default connect(mapStateToProps, null)(SearchBar);
+export default connect()(SearchBar);
