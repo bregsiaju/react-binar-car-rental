@@ -35,11 +35,11 @@ const Footer = () => {
           <Col className="sosmed">
             <p>Connect with us</p>
             <div className="icon-group mb-3">
-              <a href><img src={iconFB} className="me-3" alt="facebook icon" /></a>
-              <a href><img src={iconIG} className="me-3" alt="instagram icon" /></a>
-              <a href><img src={iconTwitter} className="me-3" alt="twitter icon" /></a>
-              <a href><img src={iconMail} className="me-3" alt="mail icon" /></a>
-              <a href><img src={iconTwitch} alt="twitch icon" /></a>
+              <img src={iconFB} className="me-3" alt="facebook icon" />
+              <img src={iconIG} className="me-3" alt="instagram icon" />
+              <img src={iconTwitter} className="me-3" alt="twitter icon" />
+              <img src={iconMail} className="me-3" alt="mail icon" />
+              <img src={iconTwitch} alt="twitch icon" />
             </div>
           </Col>
           <Col className="copyright">
