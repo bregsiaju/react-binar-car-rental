@@ -19,9 +19,11 @@ const CarResult = (props) => {
     );
   } else if (props.data === false || props.data.length === 0) {
     return (
-      <h5 className="mt-5 text-center">
-        Sorry, cars isn't found. 🚗
-      </h5>
+      <div className="container mt-5 col-md-9 text-center">
+        <Alert variant="danger">
+          Sorry, couldn't find any available cars based on that search 🚗🙅‍♀️
+        </Alert>
+      </div>
     );
   } else {
     return (
