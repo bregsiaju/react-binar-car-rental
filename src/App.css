@@ -368,7 +368,7 @@ footer .col {
   width: 75%;
   margin-top: -50px;
   position: relative;
-  z-index: 2;
+  z-index: 1032;
   background-color: #fff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
 }
@@ -392,9 +392,11 @@ footer .col {
 
 .filter {
   height: 100%;
+  width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 1031;
   background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
 }
 
 .search-card img {
