@@ -33,7 +33,10 @@ const NavigationBar = () => {
                     window.localStorage.removeItem("accessToken");
                     window.location.reload();
                   }} className="bg-danger">Log Out</MyButton>
-                  : <Link to={"/"}><MyButton>Register</MyButton></Link>}
+                  : <MyButton onClick={() => {
+                    window.localStorage.setItem("accessToken", "loggedin382715");
+                    window.location.reload();
+                  }}>Login</MyButton>}
               </div>
             </Nav>
           </Offcanvas.Body>
